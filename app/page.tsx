@@ -1,113 +1,121 @@
-import Image from "next/image";
-
+import Link from "next/link";
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="bg-yellow-300 h-screen">
+      <div className="bg-orange-500 h-12 flex justify-center items-center opacity-80">
+        <p className="text-white text-xl px-6 ">Feudal superstition, for entertainment purposes only</p>
+      </div>
+      <div className="flex justify-center mt-8">
+        <h2 className="text-2xl font-medium font-mono px-6">Chinese traditional bone divination for fortune-telling</h2>
+      </div>
+      <form action="/statement" method="post" className="flex flex-col px-12">
+        <div className="mt-8 flex flex-col">
+          <label htmlFor="year">Born in the Chinese lunar year</label>
+          <input
+            type="number"
+            name="year"
+            id="yerar"
+            placeholder="Please input Chinese lunar year"
+            className="h-12 block w-full rounded-md  py-1.5 pl-7 pr-12 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-sm sm:leading-6" />
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        <div className="mt-8 flex flex-col">
+          <label htmlFor="month">Born in the Chinese lunar month</label>
+          <select
+            name="month"
+            id="month"
+            className="h-12 rounded-md text-gray-500 py-1.5 pl-7 pr-12 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-sm"
+          >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </select>
+        </div>
+        <div className="mt-8 flex flex-col">
+          <label htmlFor="day">Born in the Chinese lunar day</label>
+          <select
+            name="day"
+            id="day"
+            className="h-12 rounded-md text-gray-500 py-1.5 pl-7 pr-12 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-sm"
+          >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+          </select>
+        </div>
+        <div className="mt-8 flex flex-col">
+          <label htmlFor="hour">Born in the Chinese lunar hour</label>
+          <select
+            name="hour"
+            id="hour"
+            className="h-12 rounded-md text-gray-500 py-1.5 pl-7 pr-12 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-sm"
+          >
+            <option value="1">00:01~00:59</option>
+            <option value="2">01:00~01:59</option>
+            <option value="2">02:00~02:59</option>
+            <option value="3">03:00~03:59</option>
+            <option value="3">04:00~04:59</option>
+            <option value="4">05:00~05:59</option>
+            <option value="4">06:00~06:59</option>
+            <option value="5">07:00~07:59</option>
+            <option value="5">08:00~08:59</option>
+            <option value="6">09:00~09:59</option>
+            <option value="6">10:00~10:59</option>
+            <option value="7">11:00~11:59</option>
+            <option value="7">12:00~12:59</option>
+            <option value="8">13:00~13:59</option>
+            <option value="8">14:00~14:59</option>
+            <option value="9">15:00~15:59</option>
+            <option value="9">16:00~16:59</option>
+            <option value="10">17:00~17:59</option>
+            <option value="10">18:00~18:59</option>
+            <option value="11">19:00~19:59</option>
+            <option value="11">20:00~20:59</option>
+            <option value="12">21:00~21:59</option>
+            <option value="12">22:00~22:59</option>
+            <option value="1">23:00~23:59</option>
+          </select>
+        </div>
+        <input type="submit" value="Start the Calculation" className="mt-8 bg-orange-500 h-12 text-white text-xl hover:bg-orange-600 hover:cursor-pointer active:bg-orange-700 rounded " />
+      </form>
+      <p className="px-12 mt-8 text-md text-gray-600">
+        Bone divination was created by the Tang Dynasty astrologer Yuan Tiangang. According to the Bone Divination Chart based on the Eight Characters (BaZi), it classifies people's destinies into 51 categories. The corresponding Bone Divination Songs can reveal detailed information about a person's life fortune. It is used for analyzing and interpreting aspects such as marriage, career, wealth, and more.
+      </p>
     </main>
   );
 }
