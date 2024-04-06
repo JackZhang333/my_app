@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function (){
+export default function Page(){
     return <main className="flex min-h-screen flex-col items-center  p-24 bg-yellow-300">
     <div className="text-4xl">
       Four jin and two liang
