@@ -114,7 +114,7 @@ export default function Home() {
         <input type="submit" value="Start the Calculation" className="mt-8 bg-orange-500 h-12 text-white text-xl hover:bg-orange-600 hover:cursor-pointer active:bg-orange-700 rounded " />
       </form>
       <p className="px-12 mt-8 text-md text-gray-600">
-        Bone divination was created by the Tang Dynasty astrologer Yuan Tiangang. According to the Bone Divination Chart based on the Eight Characters (BaZi), it classifies people's destinies into 51 categories. The corresponding Bone Divination Songs can reveal detailed information about a person's life fortune. It is used for analyzing and interpreting aspects such as marriage, career, wealth, and more.
+        Bone divination was created by the Tang Dynasty astrologer Yuan Tiangang. According to the Bone Divination Chart based on the Eight Characters (BaZi), it classifies people&lsquo;s destinies into 51 categories. The corresponding Bone Divination Songs can reveal detailed information about a person&lsquo;s life fortune. It is used for analyzing and interpreting aspects such as marriage, career, wealth, and more.
       </p>
     </main>
   );
