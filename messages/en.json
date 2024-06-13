@@ -1,0 +1,21 @@
+{
+    "Index": {
+        "title": "Chinese traditional bone divination for fortune-telling",
+        "note": "Feudal superstition, for entertainment purposes only",
+        "yearL": "Born in the Chinese lunar year",
+        "yearH": "Please input Chinese lunar year",
+        "monthL": "Born in the Chinese lunar month",
+        "monthH": "Please select Chinese lunar month",
+        "dayL": "Born in the Chinese lunar day",
+        "dayH": "Please select Chinese lunar day",
+        "hourL": "Born in the Chinese lunar hour",
+        "hourH": "Please select Chinese lunar hour",
+        "submit": "Start the calculation",
+        "tip": "Bone divination was created by the Tang Dynasty astrologer Yuan Tiangang. According to the Bone Divination Chart based on the Eight Characters (BaZi), it classifies people's destinies into 51 categories. The corresponding Bone Divination Songs can reveal detailed information about a person's life fortune. It is used for analyzing and interpreting aspects such as marriage, career, wealth, and more."
+    },
+    "Statement":{
+        "back":"Back",
+        "hint":"Hint: Jin and Liang are traditional weight units in China.",
+        "state":"{state}"
+    }
+}

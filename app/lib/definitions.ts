@@ -8,7 +8,5 @@ export type Infor ={
 export type Destiny = {
     score:number;
     state:string;
-    description:string;
-    state_en:string;
-    description_en:string;
+    state_e:string;
 }

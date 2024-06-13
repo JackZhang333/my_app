@@ -181,7 +181,6 @@ async function main(){
         await initDays(client);
         await initHours(client);
         await initStates(client);
-        
         await client.end();
     }catch(e){
         console.log(e);

@@ -1,10 +1,10 @@
 "use server"
 import { getStatesByInfor } from "./data"
-import { redirect } from "next/navigation";
-import { Destiny, Infor } from "./definitions";
+import { redirect } from "../navigation";
+import { Infor } from "./definitions";
 export async function getStates(rawData: Infor) {
     //  console.log(rawData);
-    const result = (await getStatesByInfor(rawData)).rows[0];
+    const result = await getStatesByInfor(rawData);
    
     // console.log(result);
     return result;

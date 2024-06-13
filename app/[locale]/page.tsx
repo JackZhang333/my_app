@@ -1,18 +1,27 @@
-"use client"
-import { getStates,toStamentWithState } from './lib/action';
+
+import { getStates,toStamentWithState } from '../lib/action';
+import {useTranslations} from 'next-intl';
+import Image from "next/image";
 export default function Home() {
-  
+  const t = useTranslations('Index');
   return (
-    <main className="bg-yellow-300 h-screen">
+    <main className="bg-yellow-300 h-screen ">
+      <Image
+        src="/taiji.png"
+        alt="taiji"
+        width={416}
+        height={570}
+        className="fixed right-[-50px] top-[-50px] opacity-30 "
+      />
       <div className="bg-orange-500 h-12 flex justify-center items-center opacity-80">
-        <p className="text-white text-xl px-6 ">Feudal superstition, for entertainment purposes only</p>
+        <p className="text-white text-xl px-6 ">{t('note')}</p>
       </div>
       <div className="flex justify-center mt-8">
-        <h2 className="text-2xl font-medium font-mono px-6">Chinese traditional bone divination for fortune-telling</h2>
+        <h2 className="text-2xl font-medium font-mono px-6">{t('title')}</h2>
       </div>
-      <form action={toStamentWithState} method="post" className="flex flex-col px-12">
+      <form action={toStamentWithState}  className="flex flex-col px-12">
         <div className="mt-8 flex flex-col">
-          <label htmlFor="year">Born in the Chinese lunar year</label>
+          <label htmlFor="year">{t('yearL')}</label>
           <input
             type="number"
             name="year"
@@ -20,11 +29,11 @@ export default function Home() {
             required
             min={1921}
             max={2043}
-            placeholder="Please input Chinese lunar year"
+            placeholder={t('yearH')}
             className="h-12 block w-full rounded-md  py-1.5 pl-7 pr-12 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-sm sm:leading-6" />
         </div>
         <div className="mt-8 flex flex-col">
-          <label htmlFor="month">Born in the Chinese lunar month</label>
+          <label htmlFor="month">{t('monthL')}</label>
           <select
           required
             name="month"
@@ -46,7 +55,7 @@ export default function Home() {
           </select>
         </div>
         <div className="mt-8 flex flex-col">
-          <label htmlFor="day">Born in the Chinese lunar day</label>
+          <label htmlFor="day">{t('dayL')}</label>
           <select
           required
             name="day"
@@ -86,7 +95,7 @@ export default function Home() {
           </select>
         </div>
         <div className="mt-8 flex flex-col">
-          <label htmlFor="hour">Born in the Chinese lunar hour</label>
+          <label htmlFor="hour">{t('hourL')}</label>
           <select
           required
             name="hour"
@@ -121,11 +130,11 @@ export default function Home() {
         </div>
         <input 
           type="submit" 
-          value="Start the Calculation"
+          value={t('submit')}
           className="mt-8 bg-orange-500 h-12 text-white text-xl hover:bg-orange-600 hover:cursor-pointer active:bg-orange-700 rounded " />
       </form>
       <p className="px-12 mt-8 text-md text-gray-600">
-        Bone divination was created by the Tang Dynasty astrologer Yuan Tiangang. According to the Bone Divination Chart based on the Eight Characters (BaZi), it classifies people&lsquo;s destinies into 51 categories. The corresponding Bone Divination Songs can reveal detailed information about a person&lsquo;s life fortune. It is used for analyzing and interpreting aspects such as marriage, career, wealth, and more.
+        {t('tip')}
       </p>
     </main>
   );
