@@ -5,21 +5,15 @@ import Image from "next/image";
 export default function Home() {
   const t = useTranslations('Index');
   return (
-    <main className="bg-yellow-300 h-screen ">
-      <Image
-        src="/taiji.png"
-        alt="taiji"
-        width={416}
-        height={570}
-        className="fixed right-[-50px] top-[-50px] opacity-30 "
-      />
+    <main className="flex flex-col justify-center mb-4 bg-right-top bg-no-repeat" style={{backgroundImage: "url('/taiji.png')"}}>
+      
       <div className="bg-orange-500 h-12 flex justify-center items-center opacity-80">
         <p className="text-white text-xl px-6 ">{t('note')}</p>
       </div>
       <div className="flex justify-center mt-8">
         <h2 className="text-2xl font-medium font-mono px-6">{t('title')}</h2>
       </div>
-      <form action={toStamentWithState}  className="flex flex-col px-12">
+      <form action={toStamentWithState}  className="flex flex-col px-4 md:px-8">
         <div className="mt-8 flex flex-col">
           <label htmlFor="year">{t('yearL')}</label>
           <input
@@ -133,7 +127,7 @@ export default function Home() {
           value={t('submit')}
           className="mt-8 bg-orange-500 h-12 text-white text-xl hover:bg-orange-600 hover:cursor-pointer active:bg-orange-700 rounded " />
       </form>
-      <p className="px-12 mt-8 text-md text-gray-600">
+      <p className=" mt-8 text-md text-gray-600 px-4 md:px-8">
         {t('tip')}
       </p>
     </main>

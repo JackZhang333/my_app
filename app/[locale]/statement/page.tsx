@@ -41,7 +41,7 @@ export default function Page({
       setState_e(data.state_e);
     })
   })
-  return <main className="flex min-h-screen flex-col items-center  p-24 bg-yellow-300">
+  return <main className="flex min-h-screen flex-col items-center  px-6 md:px-12 py-24">
     <div className="text-4xl">
 
       {score}

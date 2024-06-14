@@ -16,7 +16,7 @@ export async function getStatesByInfor(infor: Infor) {
     INNER JOIN hour h ON (h.index = ${hour})
     WHERE (y.value + m.value + d.value + h.value) = s.score
    `);
-    const resultRows = rows as Array<{ state: string,state_e: string, score: number }>;
+    const resultRows = rows as Array<Destiny>;
 
     if (resultRows.length === 0) {
         throw new Error('No results found');
