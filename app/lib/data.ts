@@ -1,22 +1,23 @@
-// import { sql } from '@vercel/postgres';
-import pool from './db';
+import { supabase } from '../utils/client';
 import {
     Destiny,
     Infor
 } from './definitions';
 
+
 export async function getStatesByInfor(infor: Infor) {
+   
     const { year, month, day, hour } = infor;
-    const [rows] = await pool.query(`
-    SELECT s.state,s.score,s.state_e
-    FROM state s
-    INNER JOIN year y ON (y.year2 = ${year} OR (y.year1 = ${year} AND y.year2 IS NULL))
-    INNER JOIN month m ON (m.index = ${month})
-    INNER JOIN day d ON (d.index = ${day})
-    INNER JOIN hour h ON (h.index = ${hour})
-    WHERE (y.value + m.value + d.value + h.value) = s.score
-   `);
-    const resultRows = rows as Array<Destiny>;
+
+    const result = await supabase.rpc('get_state_by_time', {
+        input_year: year,
+        input_month: month,
+        input_day: day,
+        input_hour: hour,
+    })
+    const { data, error } = result;
+    // console.log('getStatesByInfor', data, error,result);
+    const resultRows = data as unknown as Array<Destiny>;
 
     if (resultRows.length === 0) {
         throw new Error('No results found');
@@ -27,6 +28,6 @@ export async function getStatesByInfor(infor: Infor) {
         state: resultRows[0].state,
         state_e: resultRows[0].state_e
     };
-
+    console.log(destiny);
     return destiny;
 }
