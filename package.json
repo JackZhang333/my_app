@@ -17,7 +17,10 @@
     "query-string": "^9.0.0",
     "react": "^18",
     "react-dom": "^18",
-    "xlsx": "^0.18.5"
+    "xlsx": "^0.18.5",
+    "@supabase/supabase-js":"latest",
+    "@supabase/ssr":"latest"
+
   },
   "devDependencies": {
     "@types/node": "^20",
