@@ -22,7 +22,7 @@ export default async function RootLayout({
   const messages = await getMessages();
   return (
     <html lang={locale}>
-      <body className="bg-yellow-200 ">
+      <body className="bg-[#F8EEDE] ">
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
