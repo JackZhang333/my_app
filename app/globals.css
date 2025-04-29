@@ -7,8 +7,12 @@
   min-height: 667px;
 }
 
-
-
+/* @font-face {
+  font-family: 'hengsan';
+  src: url('/fonts/hengsan.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+} */
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -63,9 +67,10 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+  .theme {
+    --animate-background-position-spin: background-position-spin 3000ms infinite alternate;
+  }
 }
-
-
 
 @layer base {
   * {
@@ -73,5 +78,16 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@theme inline {
+  @keyframes background-position-spin {
+  0% {
+    background-position: top center;
+    }
+  100% {
+    background-position: bottom center;
+    }
   }
 }

@@ -1,7 +1,7 @@
 {
     "Index": {
-        "title": "Chinese traditional bone divination for fortune-telling",
-        "note": "Feudal superstition, for entertainment purposes only",
+        "title": "Bone divination for fortune-telling",
+        "note": "Ancient wisdom for interpretation",
         "yearL": "Born in the Chinese lunar year",
         "yearH": "Please input Chinese lunar year",
         "monthL": "Born in the Chinese lunar month",
@@ -16,6 +16,8 @@
     "Statement":{
         "back":"Back",
         "hint":"Hint: Jin and Liang are traditional weight units in China.",
-        "state":"{state}"
+        "state":"{state}",
+        "donate":"Donate",
+        "donateTip":"If you like this app, please consider donating to support its development with WeChat. Thank you!"
     }
 }

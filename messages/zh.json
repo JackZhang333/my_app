@@ -16,6 +16,8 @@
     "Statement":{
         "back":"返回",
         "hint":"提示：斤和两是中国传统的计重单位",
-        "state":"{state}"
+        "state":"{state}",
+        "donate":"打赏",
+        "donateTip":"如果您喜欢这个应用，请考虑通过微信打赏以支持其开发。谢谢！"
     }
 }

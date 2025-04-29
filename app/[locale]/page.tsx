@@ -119,7 +119,7 @@ export default function Home() {
                 <Select onValueChange={field.onChange} value={field.value}>
                   <FormControl>
                     <SelectTrigger className='h-12 bg-white rounded-md'>
-                      <SelectValue placeholder="Select a month" />
+                      <SelectValue placeholder={t('monthH')}/>
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
@@ -143,7 +143,7 @@ export default function Home() {
                 <Select onValueChange={field.onChange} value={field.value}>
                   <FormControl>
                     <SelectTrigger className='h-12 bg-white rounded-md'>
-                      <SelectValue placeholder="Select a day" />
+                      <SelectValue placeholder= {t('dayH')} />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
@@ -167,7 +167,7 @@ export default function Home() {
                 <Select onValueChange={field.onChange} value={field.value}>
                   <FormControl>
                     <SelectTrigger className='h-12 bg-white rounded-md'>
-                      <SelectValue placeholder="Select a hour" />
+                      <SelectValue placeholder={t('hourH')} />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
@@ -189,7 +189,7 @@ export default function Home() {
           </Button>
         </form>
       </Form>
-      <p className=" mt-8 text-md text-gray-600 px-4 md:px-8">
+      <p className=" mt-8 text-sm text-gray-500 px-4 md:px-8">
         {t('tip')}
       </p>
     </main>
