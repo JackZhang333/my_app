@@ -18,6 +18,7 @@
         "hint":"Hint: Jin and Liang are traditional weight units in China.",
         "state":"{state}",
         "donate":"Donate",
-        "donateTip":"If you like this app, please consider donating to support its development with WeChat. Thank you!"
+        "donateTip":"If you like this app, please consider donating to support its development with WeChat. Thank you!",
+        "close":"I have donated"
     }
 }

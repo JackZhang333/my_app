@@ -5,7 +5,7 @@ import queryString from "query-string";
 import { getStates } from "../../lib/action";
 import { useTranslations } from 'next-intl';
 import { TypingAnimation } from "@/src/components/magicui/typing-animation";
-
+import { Button } from "@/components/ui/button"
 export default function Page({
   params: { locale } }: {
     params: { locale: string }
@@ -27,6 +27,7 @@ export default function Page({
   const [state_e, setState_e] = useState("");
   const [originalScore, setOriginalScore] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [donateAmount, setDonateAmount] = useState('wepay5.png');
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -34,6 +35,12 @@ export default function Page({
 
   const closeModal = () => {
     setIsModalOpen(false);
+  };
+
+  const autoShowDonateWindow = () => {
+    setTimeout(() => {
+      setIsModalOpen(true);
+    }, 3000);
   };
 
   useEffect(() => {
@@ -45,13 +52,27 @@ export default function Page({
       day: Number(day),
       hour: Number(hour),
     }).then((data) => {
-      // console.log(data)
       setScore(convertToChineseMeasure(data.score));
       setState(data.state);
       setState_e(data.state_e);
       setOriginalScore(data.score);
+      //检查是否已经显示过打赏窗口
+      const hasShownDonate = sessionStorage.getItem('hasShownDonate');
+      if (data.score > 35 && !hasShownDonate) {
+        // 选择打赏金额
+        const donateAmounts = ['wepay5.png', 'wepay10.png', 'wepay50.png', ];
+        //当 score 大于 35 时设置 wepay10.png;当 score 大于 50 时设置 wepay50.png
+        if (data.score > 60) {
+          setDonateAmount(donateAmounts[2]);
+        } else if (data.score > 50) {
+          setDonateAmount(donateAmounts[1]);
+        } else {
+          setDonateAmount(donateAmounts[0]);
+        }
+        autoShowDonateWindow();
+      }
     })
-  })
+  }, []); // Added dependency array to prevent infinite loop
   return (
     <main className="flex min-h-screen flex-col items-center px-6 md:px-12 py-24 w-full ">
       <div className="w-full h-60 -z-10 top-0 absolute bg-gradient-to-b from-white via-white/60 to-white/0" />
@@ -73,22 +94,32 @@ export default function Page({
       {isModalOpen && (
         <div className="fixed z-40 top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
           <div className="bg-white p-8 rounded shadow-md relative">
-        <button
-          onClick={closeModal}
-          className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 cursor-pointer p-2"
-          aria-label="Close modal"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-        <h2 className="text-2xl font-bold mb-4">{t('donate')}</h2>
-        <p className="mb-4 text-gray-500">{t('donateTip')}</p>
-        <img
-          src="/weipay.png"
-          alt="打赏二维码"
-          className="mx-auto"
-        />
+            <button
+              onClick={closeModal}
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 cursor-pointer p-2"
+              aria-label="Close modal"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <h2 className="text-2xl font-bold mb-4">{t('donate')}</h2>
+            <p className="mb-4 text-gray-500">{t('donateTip')}</p>
+            <img
+              src={`/${donateAmount}`}
+              alt="打赏二维码"
+              className="mx-auto"
+            />
+            <Button
+             
+              className="w-full mt-4 bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
+              onClick={()=>{
+                closeModal();
+                sessionStorage.setItem('hasShownDonate', 'true');
+              }}
+            >
+              {t('close')}
+            </Button>
           </div>
         </div>
       )}
