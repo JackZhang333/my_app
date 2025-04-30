@@ -16,6 +16,8 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
 import {
   Select,
@@ -52,7 +54,10 @@ export default function Home() {
     ),
     hour: z.string(
       {required_error: "Hour is required",
-        invalid_type_error: "Hour must be a number",})
+        invalid_type_error: "Hour must be a number",}),
+    gender: z.enum(
+      ['male','female'],
+    )
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -61,7 +66,8 @@ export default function Home() {
       year: '',
       month: '',
       day: '',
-      hour: ''
+      hour: '',
+      gender:'male'
     }
   })
 
@@ -183,7 +189,34 @@ export default function Home() {
                 <FormMessage />
               </FormItem>
             )}
-          />
+            />
+            <FormField
+            control={form.control}
+            name="gender"
+            render={({ field }) => (
+              <FormItem className="mt-4">
+              <FormLabel>{t('genderL')}</FormLabel>
+              <FormControl>
+                <RadioGroup
+                onValueChange={field.onChange}
+                value={field.value}
+                defaultValue="male"
+                className="flex gap-4"
+                >
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="male" id="male" />
+                  <Label htmlFor="male">{t('male')}</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="female" id="femaile" />
+                  <Label htmlFor="femaile">{t('female')}</Label>
+                </div>
+                </RadioGroup>
+              </FormControl>
+              <FormMessage />
+              </FormItem>
+            )}
+            />
           <Button type="submit" className="mt-8 bg-orange-500 h-12 text-white text-xl hover:bg-orange-600 hover:cursor-pointer active:bg-orange-700 rounded ">
             {t('submit')}
           </Button>

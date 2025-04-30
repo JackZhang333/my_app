@@ -9,7 +9,7 @@ export async function getStatesByInfor(infor: Infor) {
    
     const { year, month, day, hour } = infor;
 
-    const result = await supabase.rpc('get_state_by_time', {
+    const result = await supabase.rpc('get_state_by_time_all', {
         input_year: year,
         input_month: month,
         input_day: day,
@@ -26,8 +26,10 @@ export async function getStatesByInfor(infor: Infor) {
     const destiny: Destiny = {
         score: resultRows[0].score,
         state: resultRows[0].state,
-        state_e: resultRows[0].state_e
+        state_e: resultRows[0].state_e,
+        female: resultRows[0].female,
+        state_e_f: resultRows[0].state_e_f,
     };
-    console.log(destiny);
+    // console.log(destiny);
     return destiny;
 }

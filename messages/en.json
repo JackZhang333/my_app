@@ -11,7 +11,10 @@
         "hourL": "Born in the Chinese lunar hour",
         "hourH": "Please select Chinese lunar hour",
         "submit": "Start the calculation",
-        "tip": "Bone divination was created by the Tang Dynasty astrologer Yuan Tiangang. According to the Bone Divination Chart based on the Eight Characters (BaZi), it classifies people's destinies into 51 categories. The corresponding Bone Divination Songs can reveal detailed information about a person's life fortune. It is used for analyzing and interpreting aspects such as marriage, career, wealth, and more."
+        "tip": "Bone divination was created by the Tang Dynasty astrologer Yuan Tiangang. According to the Bone Divination Chart based on the Eight Characters (BaZi), it classifies people's destinies into 51 categories. The corresponding Bone Divination Songs can reveal detailed information about a person's life fortune. It is used for analyzing and interpreting aspects such as marriage, career, wealth, and more.",
+        "genderL": "Gender",
+        "male":"Male",
+        "female":"Female"
     },
     "Statement":{
         "back":"Back",
@@ -19,6 +22,7 @@
         "state":"{state}",
         "donate":"Donate",
         "donateTip":"If you like this app, please consider donating to support its development with WeChat. Thank you!",
-        "close":"I have donated"
+        "close":"I have donated",
+        "note":"Superstition, for entertainment only!!!"
     }
 }

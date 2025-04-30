@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { AppProps } from "next/app";
 import { Inter } from "next/font/google";
 import "../globals.css";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server'
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +26,7 @@ export default async function RootLayout({
       <body className="bg-[#F8EEDE] ">
         <NextIntlClientProvider messages={messages}>
           {children}
+          <Analytics />
         </NextIntlClientProvider>
       </body>
     </html>

@@ -17,7 +17,8 @@ export async function toStamentWithState(formData:FormData) {
         month: Number(formData.get('month')),
         day: Number(formData.get('day')),
         hour: Number(formData.get('hour')),
+        gender: formData.get('gender')
      }
 
-    redirect('/statement/?year='+rawData.year+'&month='+rawData.month+'&day='+rawData.day+'&hour='+rawData.hour);
+    redirect('/statement/?year='+rawData.year+'&month='+rawData.month+'&day='+rawData.day+'&hour='+rawData.hour+'&gender='+rawData.gender);
 }
