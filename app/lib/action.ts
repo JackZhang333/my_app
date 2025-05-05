@@ -1,7 +1,8 @@
 "use server"
-import { getStatesByInfor } from "./data"
+import { getStatesByInfor } from "./data" 
 import { redirect } from "../navigation";
 import { Infor } from "./definitions";
+import exp from "constants";
 export async function getStates(rawData: Infor) {
     //  console.log(rawData);
     const result = await getStatesByInfor(rawData);
